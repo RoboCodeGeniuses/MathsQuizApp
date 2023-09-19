@@ -1,0 +1,226 @@
+MyManager:
+    MainScreen:
+    AddScreen:
+    SubScreen:
+    MulScreen:
+    DivScreen:
+<CommonKeypad>:
+    MDFloatLayout:
+        MDTextField:
+            id: quiz_input
+            hint_text: "Enter the Answer of the Question Asked Here."
+            size_hint: (0.8, 0.15)
+            font_size: "42sp"
+            pos_hint:{"center_x":0.8, "center_y":0.9}
+        MDRectangleFlatButton:
+            id: ques
+            text: ""
+            md_bg_color: [1, 1, 1, 1]
+            size_hint: (1, 0.15)
+            pos_hint:{"center_x":0.5, "center_y":0.5}
+            font_size: "42sp"
+        MDRectangleFlatButton:
+            id: check_ans
+            text: ""
+            md_bg_color: [1, 1, 1, 1]
+            size_hint: (1, 0.15)
+            pos_hint:{"center_x":0.5, "center_y":0.7}
+            font_size: "27sp"
+        MDRectangleFlatButton:
+            text: "7"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.13, "center_y": 0.4}
+            font_size: "28sp"
+            on_release: app.clarification_7()
+        MDRectangleFlatButton:
+            text: "8"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.38, "center_y": 0.4}
+            font_size: "28sp"
+            on_release: app.clarification_8()
+        MDRectangleFlatButton:
+            text: "9"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.63, "center_y": 0.4}
+            font_size: "28sp"
+            on_release: app.clarification_9()
+        MDRectangleFlatButton:
+            text: "4"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.13, "center_y": 0.3}
+            font_size: "28sp"
+            on_release: app.clarification_4()
+        MDRectangleFlatButton:
+            text: "5"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.38, "center_y": 0.3}
+            font_size: "28sp"
+            on_release: app.clarification_5()
+        MDRectangleFlatButton:
+            text: "6"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.63, "center_y": 0.3}
+            font_size: "28sp"
+            on_release: app.clarification_6()
+        MDRectangleFlatButton:
+            text: "1"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.13, "center_y": 0.2}
+            font_size: "28sp"
+            on_release: app.clarification_1()
+        MDRectangleFlatButton:
+            text: "2"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.38, "center_y": 0.2}
+            font_size: "28sp"
+            on_release: app.clarification_2()
+        MDRectangleFlatButton:
+            text: "3"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.63, "center_y": 0.2}
+            font_size: "28sp"
+            on_release: app.clarification_3()
+        MDRectangleFlatButton:
+            text: "0"
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.75, 0.2)
+            pos_hint: {"center_x": 0.381, "center_y": 0.05}
+            font_size: "28sp"
+            on_release: app.clarification_0()
+        MDRectangleFlatButton:
+            text: "="
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.4)
+            pos_hint: {"center_x": 0.88, "center_y": 0.15}
+            font_size: "48sp"
+            on_release:
+                app.clarification_check_123()
+                app.clarification()
+                app.clarification_random()
+        MDRectangleFlatButton:
+            text: ""
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.88, "center_y": 0.397}
+            font_size: "28sp"
+        MDIconButton:
+            icon: "backspace-outline"
+            radius: [10, 10, 10, 10]
+            md_bg_color: [0.2, 0.2, 0.2, 1]
+            size_hint: (0.25, 0.1)
+            pos_hint: {"center_x": 0.88, "center_y": 0.397}
+            font_size: "38sp"
+            on_release: app.clarification_back()
+<MainScreen>:
+    name: "mainscrn"
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: 5
+        spacing: 10
+        MDRectangleFlatButton:
+            id: title
+            md_bg_color: [0.16, 0.16, 0.61, 1]
+            text: "Maths Quiz For Kids"
+            text_color: [1, 1, 1, 1]
+            font_size: "32dp"
+            size_hint: (1, 0.1)
+        MDRectangleFlatButton:
+            id: score
+            md_bg_color: [1, 0.48, 0, 1]
+            text: "Score: 0.00%"
+            text_color: [1, 1, 1, 1]
+            font_size: "32dp"
+            size_hint: (1, 0.1)
+        MDRectangleFlatButton:
+            id: add
+            md_bg_color: [1, 0.33, 0.15, 1]
+            text: "Addition"
+            text_color: [1, 1, 1, 1]
+            font_size: "28dp"
+            size_hint: (1, 0.1)
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "addscrn"
+                app.clarification_random()
+        MDRectangleFlatButton:
+            id: sub
+            md_bg_color: [0.4, 0, 1, 1]
+            text: "Subtraction"
+            text_color: [1, 1, 1, 1]
+            font_size: "28dp"
+            size_hint: (1, 0.1)
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "subscrn"
+                app.clarification_random()
+        MDRectangleFlatButton:
+            id: multiply
+            md_bg_color: [1, 0.78, 0, 1]
+            text: "Multiplication"
+            text_color: [1, 1, 1, 1]
+            font_size: "28dp"
+            size_hint: (1, 0.1)
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "mulscrn"
+                app.clarification_random()
+        MDRectangleFlatButton:
+            id: division
+            md_bg_color: [0.14, 0.78, 0.14, 1]
+            text: "Division"
+            text_color: [1, 1, 1, 1]
+            font_size: "28dp"
+            size_hint: (1, 0.1)
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "divscrn"
+                app.clarification_random()
+<AddScreen>:
+    name: "addscrn"
+    MDAnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        MDIconButton:
+            icon: "arrow-left-bottom"                          
+            on_release: app.root.current = "mainscrn"
+        CommonKeypad:
+            id: commonkeypadadd
+<SubScreen>:
+    name: "subscrn"
+    MDAnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        MDIconButton:
+            icon: "arrow-left-bottom"                          
+            on_release: app.root.current = "mainscrn"
+        CommonKeypad:
+            id: commonkeypadsub
+<MulScreen>:
+    name: "mulscrn"
+    MDAnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        MDIconButton:
+            icon: "arrow-left-bottom"                          
+            on_release: app.root.current = "mainscrn"
+        CommonKeypad:
+            id: commonkeypadmul
+<DivScreen>:
+    name: "divscrn"
+    MDAnchorLayout:
+        anchor_x: "left"
+        anchor_y: "top"
+        MDIconButton:
+            icon: "arrow-left-bottom"                          
+            on_release: app.root.current = "mainscrn"
+        CommonKeypad:
+            id: commonkeypaddiv
